@@ -30,21 +30,43 @@ npm install
 2️⃣ **Configura las variables de entorno**
 ```bash
 # Archivo .env
-SERVER_PORT=3000
+SERVER_PORT=3333
 APIKEY_STRIPE=tu_clave_secreta_de_stripe
 ```
 
 ## 📁 Estructura del Proyecto
 
-```
+```three
 └── 📂 root
-  ├── 📄 main.js              # Servidor Express principal
-  ├── 📄 config.js            # Configuración de variables
-  ├── 📄 setupStripe.js       # Setup códigos promocionales
+  ├── 📂 public                    
+  │   ├── 📂 css
+  │   │   └── 🎨 style.css         
+  │   ├── 📂 js
+  │   │   └── 🟨 main.js           
+  │   ├── 🌐 index.html            
+  │   ├── 🌐 cancel.html           
+  │   └── 🌐 success.html          
+  │
+  ├── 📂 src                       
+  │   └── ⚡ main.js               
+  │
+  ├── 📂 config
+  │   └── ⚙️ config.js             
+  │
+  ├── 📂 scripts
+  │   └── 🔧 setupStripe.js        
+  │
   ├── 📂 routes
-  │   └── 📄 payment.routes.js
-  └── 📂 controllers
-    └── 📄 payment.controllers.js
+  │   └── 🛣️ payment.routes.js     
+  │
+  ├── 📂 controllers
+  │   └── 🎮 payment.controllers.js
+  │
+  ├── 🔒 .env                      
+  ├── 🔧 .nvmrc                    
+  ├── ⚙️ nodemon.json              
+  ├── 📦 package.json              
+  └── 👁️ .gitignore                git
 ```
 
 ## 💰 Planes Disponibles
@@ -102,15 +124,15 @@ GET  /api/v1/payment/cancel                          // Pago cancelado
 # Iniciar servidor
 node main.js
 
-# Configurar promociones
+# Configurar promociones server up is required
 node setupStripe.js
 ```
 
 ## 🌐 URLs
 
 ```
-📱 Frontend: http://localhost:3000
-🔌 API:      http://localhost:3000/api/v1/payment
+📱 Frontend: http://localhost:3333
+🔌 API:      http://localhost:3333/api/v1/payment
 ```
 
 ## ⚙️ Configuración
