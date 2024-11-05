@@ -1,111 +1,120 @@
-# Aplicación de Pagos con Stripe
+# 💳 Aplicación de Pagos con Stripe
 
-Esta es una aplicación de pagos desarrollada con Node.js y Stripe que permite procesar pagos con tarjetas de crédito y aplicar códigos promocionales.
+<p align="center">
+  <img src="files/index.png" width="768" height="500" alt="Logo de la aplicación">
+</p>
 
-## Configuración Inicial
+<div align="center">
 
-1. Clona el repositorio
-2. Instala las dependencias:
+[![Node.js](https://img.shields.io/badge/Node.js-v14+-green.svg)](https://nodejs.org/)
+[![Stripe](https://img.shields.io/badge/Stripe-v2023-blue.svg)](https://stripe.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+</div>
+
+## 🌟 Características Principales
+
+- ✨ Procesamiento de pagos con tarjetas de crédito
+- 🏷️ Sistema de códigos promocionales
+- 🌍 Soporte multi-moneda
+- 🔒 Integración segura con Stripe
+
+## ⚡ Inicio Rápido
+
+1️⃣ **Clona el repositorio e instala dependencias**
 ```bash
+git clone [url-del-repositorio]
 npm install
 ```
 
-3. Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
+2️⃣ **Configura las variables de entorno**
 ```bash
+# Archivo .env
 SERVER_PORT=3000
 APIKEY_STRIPE=tu_clave_secreta_de_stripe
 ```
 
-## Estructura del Proyecto
+## 📁 Estructura del Proyecto
 
-- `main.js`: Servidor Express principal
-- `config.js`: Configuración de variables de entorno
-- `setupStripe.js`: Configuración de códigos promocionales
-- `routes/payment.routes.js`: Rutas de la API de pagos
-- `controllers/payment.controllers.js`: Controladores de pagos
+```
+└── 📂 root
+  ├── 📄 main.js              # Servidor Express principal
+  ├── 📄 config.js            # Configuración de variables
+  ├── 📄 setupStripe.js       # Setup códigos promocionales
+  ├── 📂 routes
+  │   └── 📄 payment.routes.js
+  └── 📂 controllers
+    └── 📄 payment.controllers.js
+```
 
-## Planes Disponibles
+## 💰 Planes Disponibles
 
 | ID | Plan | Precio (EUR) |
 |----|------|--------------|
-| 1 | Asistence plan 1 hour | 250.00€ |
-| 2 | Asistence plan 2 hours Pack | 500.00€ |
-| 3 | Asistence plan 5 hours Pack | 950.00€ |
-| 4 | Asistence plan 10 hours Pack | 1,800.00€ |
+| 1 | 🕐 Asistencia 1 hora | 250.00€ |
+| 2 | 🕑 Pack 2 horas | 500.00€ |
+| 3 | 🕔 Pack 5 horas | 950.00€ |
+| 4 | 🕙 Pack 10 horas | 1,800.00€ |
 
-## Códigos Promocionales
+## 🎟️ Códigos Promocionales
 
-La aplicación incluye los siguientes códigos promocionales:
+| Código | Descuento | Descripción |
+|--------|-----------|-------------|
+| `WELCOME10` | 10% | Primera compra |
+| `WINTER20` | 20% | Venta de invierno |
+| `FLASH50` | 50% | Venta flash |
+| `FIXED25` | 25€ | Descuento fijo |
 
-- `WELCOME10`: 10% de descuento en primera compra
-- `WINTER20`: 20% de descuento en venta de invierno
-- `FLASH50`: 50% de descuento en venta flash
-- `FIXED25`: 25€ de descuento en la compra
+## 🧪 Tarjetas de Prueba
 
-## Pruebas con Tarjetas de Stripe
-
-Para realizar pruebas, utiliza las siguientes tarjetas de prueba:
-
-### Tarjetas de Prueba Básicas
-- **Pago exitoso**: 4242 4242 4242 4242
-- **Pago fallido**: 4000 0000 0000 0002
-- **Requiere autenticación**: 4000 0025 0000 3155
-
-### Datos para Pruebas
-- **Fecha futura válida**: Cualquier fecha futura
-- **CVC**: Cualquier número de 3 dígitos
-- **Código postal**: Cualquier código postal válido
-
-### Tarjetas por País/Región
-- **España**: 4000 0087 0000 0000
-- **Francia**: 4000 0082 0000 0000
-- **Alemania**: 4000 0084 0000 0000
-
-### Casos Específicos de Prueba
-- **Fondos insuficientes**: 4000 0000 0000 9995
-- **Tarjeta perdida**: 4000 0000 0000 9987
-- **Tarjeta expirada**: 4000 0000 0000 0069
-
-## Uso de la API
-
-### Crear una Sesión de Pago
-
-```bash
-curl -X POST http://localhost:3000/api/v1/payment/create-checkout-session/1
+### 🟢 Tarjetas Básicas
+```
+✅ Éxito:         4242 4242 4242 4242
+❌ Fallo:         4000 0000 0000 0002
+🔐 Autenticación: 4000 0025 0000 3155
 ```
 
-### Endpoints Disponibles
+### 🌍 Tarjetas por Región
+```
+🇪🇸 España:    4000 0087 0000 0000
+🇫🇷 Francia:   4000 0082 0000 0000
+🇩🇪 Alemania:  4000 0084 0000 0000
+```
 
-- `POST /api/v1/payment/create-checkout-session/:planId`: Crea una sesión de pago
-- `GET /api/v1/payment/success`: Página de pago exitoso
-- `GET /api/v1/payment/cancel`: Página de pago cancelado
+### ⚠️ Casos Especiales
+```
+💰 Sin fondos:  4000 0000 0000 9995
+❌ Perdida:     4000 0000 0000 9987
+⌛ Expirada:    4000 0000 0000 0069
+```
 
-## Iniciar la Aplicación
+## 🔌 API Endpoints
 
-1. Iniciar el servidor:
+```javascript
+POST /api/v1/payment/create-checkout-session/:planId  // Crear sesión
+GET  /api/v1/payment/success                         // Pago exitoso
+GET  /api/v1/payment/cancel                          // Pago cancelado
+```
+
+## 🚀 Ejecutar el Proyecto
+
 ```bash
+# Iniciar servidor
 node main.js
-```
 
-2. Configurar los códigos promocionales:
-```bash
+# Configurar promociones
 node setupStripe.js
 ```
 
-## URLs de la Aplicación
+## 🌐 URLs
 
-- Homepage: `http://localhost:3000`
-- API endpoint: `http://localhost:3000/api/v1/payment`
+```
+📱 Frontend: http://localhost:3000
+🔌 API:      http://localhost:3000/api/v1/payment
+```
 
-## Manejo de Errores
+## ⚙️ Configuración
 
-La aplicación incluye manejo de errores para:
-- Planes inválidos
-- Errores en la creación de sesión de pago
-- Errores en la creación de códigos promocionales
-
-## Consideraciones de Desarrollo
-
-- La aplicación está configurada para usar EUR como moneda predeterminada
-- Los códigos promocionales tienen un límite de 100 usos
-- Se incluye CORS configurado para permitir solicitudes de cualquier origen
+- 💶 Moneda predeterminada: EUR
+- 🎫 Límite de códigos promo: 100 usos
+- 🔓 CORS: Habilitado para todos los orígenes
