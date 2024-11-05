@@ -1,0 +1,26 @@
+{
+  "name": "stripe",
+  "description": "Stripe API with Node.js",
+  "author": {
+    "name": "Jesus Maria",
+    "lastname": "Rico Gonzalez",
+    "email": "info@jmrg.dev"
+  },
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --legacy-watch -e js,json,env src/main.js",
+    "setup-stripe": "node scripts/setupStripe.js"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "dotenv": "16.4.5",
+    "express": "4.21.1",
+    "stripe": "17.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.7"
+  }
+}

@@ -1,0 +1,125 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Planes de Asistencia - Ofertas Especiales</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Planes de Asistencia</h1>
+      <p class="subtitle">Elige el plan perfecto para tus necesidades</p>
+    </header>
+
+    <div class="promo-banner">
+      <div class="promo-title">
+        <i class="material-icons">local_offer</i>
+        <h3>¡Ofertas Especiales Disponibles!</h3>
+      </div>
+      <div class="promo-codes">
+        <div class="promo-code">
+          <span class="code">WELCOME10</span>
+          <span class="description">10% de descuento en tu primera compra</span>
+        </div>
+        <div class="promo-code">
+          <span class="code">WINTER20</span>
+          <span class="description">20% de descuento en venta de invierno</span>
+        </div>
+        <div class="promo-code">
+          <span class="code">FLASH50</span>
+          <span class="description">50% de descuento en venta flash</span>
+        </div>
+        <div class="promo-code">
+          <span class="code">FIXED25</span>
+          <span class="description">25€ de descuento en tu compra</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="plans-container">
+      <div class="plan-card">
+        <div class="plan-header">
+          <i class="material-icons plan-icon">schedule</i>
+          <h2>Plan Básico</h2>
+          <p class="plan-duration">1 Hora</p>
+        </div>
+        <div class="plan-price">
+          <span class="currency">€</span>
+          <span class="amount">250</span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="material-icons">check_circle</i> Consulta única</li>
+          <li><i class="material-icons">check_circle</i> Soporte básico</li>
+          <li><i class="material-icons">check_circle</i> Disponibilidad 24/7</li>
+        </ul>
+        <button onclick="checkout(1)" class="select-button">Seleccionar Plan</button>
+      </div>
+
+      <div class="plan-card">
+        <div class="most-popular">Más Popular</div>
+        <div class="plan-header">
+          <i class="material-icons plan-icon">schedule</i>
+          <h2>Paquete Estándar</h2>
+          <p class="plan-duration">2 Horas</p>
+        </div>
+        <div class="plan-price">
+          <span class="currency">€</span>
+          <span class="amount">500</span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="material-icons">check_circle</i> Consulta extendida</li>
+          <li><i class="material-icons">check_circle</i> Soporte prioritario</li>
+          <li><i class="material-icons">check_circle</i> Disponibilidad 24/7</li>
+          <li><i class="material-icons">check_circle</i> Sesión de seguimiento</li>
+        </ul>
+        <button onclick="checkout(2)" class="select-button">Seleccionar Plan</button>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-header">
+          <i class="material-icons plan-icon">schedule</i>
+          <h2>Paquete Profesional</h2>
+          <p class="plan-duration">5 Horas</p>
+        </div>
+        <div class="plan-price">
+          <span class="currency">€</span>
+          <span class="amount">950</span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="material-icons">check_circle</i> Consulta integral</li>
+          <li><i class="material-icons">check_circle</i> Soporte premium</li>
+          <li><i class="material-icons">check_circle</i> Acceso prioritario 24/7</li>
+          <li><i class="material-icons">check_circle</i> Múltiples seguimientos</li>
+        </ul>
+        <button onclick="checkout(3)" class="select-button">Seleccionar Plan</button>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-header">
+          <i class="material-icons plan-icon">schedule</i>
+          <h2>Paquete Empresarial</h2>
+          <p class="plan-duration">10 Horas</p>
+        </div>
+        <div class="plan-price">
+          <span class="currency">€</span>
+          <span class="amount">1,800</span>
+        </div>
+        <ul class="plan-features">
+          <li><i class="material-icons">check_circle</i> Paquete de servicio completo</li>
+          <li><i class="material-icons">check_circle</i> Soporte VIP</li>
+          <li><i class="material-icons">check_circle</i> Consultor dedicado</li>
+          <li><i class="material-icons">check_circle</i> Seguimientos ilimitados</li>
+        </ul>
+        <button onclick="checkout(4)" class="select-button">Seleccionar Plan</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
